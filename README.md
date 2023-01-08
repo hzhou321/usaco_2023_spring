@@ -1,4 +1,5 @@
 # Han Academy USACO 2023 Spring - Bronze/Silver
 
-Sundays:  01/08, 15, 29; 02/5, 12, 19, 26; 3/5, 12, 19; 4/2, 9, 16, 23; and 04/30/2023 -- 15 weeks, no classes on 01/22 Chinese New year, 3/26 Spring Break
+* 15 lessons
+1/8, 1/15, 1/29, 2/5, 2/12, 2/19, 2/26, 3/5, 3/12, 3/19, 4/2, 4/9, 4/16, 4/23, 4/30 -- Skip 1/22, 3/26
 
