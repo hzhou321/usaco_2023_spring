@@ -81,5 +81,48 @@ int main()
            break
    ans = A[N-1]
 ```   
+
+## Prob 1 silver - visits
 ```
+4
+1 10
+2 20
+3 30
+0 40
+```
+A0 -> A1 -> A2  --> Ax
+* Chain works, A tree always work
+* Cycle need break one chain (at any link) --> of course we want to break the smallest value link
+* A
+B   C 
+B1 B2 
+
+Knowledge about tree
+* A tree is a connected group, All n nodes are connected
+* A tree does not have cycles
+* A tree has N-1 connection 
+* If a connected group has N nodes and N connections --> There will only be 1 cycle in the graph 
+```
+// find all connected groups, for each group there must be one cycle, and we need break it
+int visited[N]
+while true
+    find i_next to be the first node we haven't visited
+    i = i_next
+    start an empty set
+    while i is not visited
+        visited[i] = true
+        ans += V[i]
+        i = A[i]
+    // i is visited
+    if i is in this set
+        you found a cycle, traverse the cycle, find the weakest link, cut it
+        ans -= V[link]
+    else    
+        no need to cut anything
+        
+        
+$print ans        
+```
+
+
 
