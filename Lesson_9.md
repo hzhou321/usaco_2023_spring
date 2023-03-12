@@ -43,6 +43,9 @@ foreach paper list
 # Bronze 3
 CGCGC
  C
+* Trying to match cows
+* each G can be used once at most
+* top-down and left-right -- as long as you have a policy that prevent double counting pairs, it should work the same 
  
 # Silver 1 - Tic tac toe
 * Backtracking 
