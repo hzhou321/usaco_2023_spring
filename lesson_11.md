@@ -76,3 +76,30 @@ for n=0:(1<<M)
         if min_cost > cost
            min_cost = cost             
 ```
+## prob 3 - bronze
+* if < 3 --> -1
+* if > 3 --> need reduce to 3 --> n-3
+* case ==3
+    * MOO -- works, 0 needed
+    * xMx -- won't work
+    * xOx -- works, 1 or 2 more ops
+
+* case substr 
+* MOO --> n-3
+* MOM --> n-3 + 1
+* OOO --> n-3 + 1
+* OOM --> n-3 + 2
+* else -1
+*
+`strstr(whole_str, substr), if true --> ans`
+
+## prob 1 - silver
+
+* Each letter is a group of positions
+* Smaller input group can merge into bigger output group, not vice versa
+    * multiple input letters can become a single output letter, not vice versa
+* If n smaller letters map to 1 output letter --> merge input groups into a single group --> n - 1
+* Now you should have a one to one mapping from input to output, positions are irrelevant, it's just permuation
+    * if input set != output set --> num_set ops
+    * what if input set == output set --> num_set+1
+* 
