@@ -41,3 +41,38 @@ if E[min_G] >= max_G
 ...
 // check double counting -- there is no way, skip
 ```
+
+### Wilson's algorith
+* one leader of 'G' knows the other 'H' which is the first 'H'
+* --> GG...GH....
+* --> HH...HG....
+* Exception The first G can cover to first H or first H-1 and there on other G afterwards
+
+
+## prob2 - bronze
+| -------------- [100] |
+ [1   ]   [2  ]     --- cow_list
+ ----------
+     -------------  --- air_list
+ * cow require c  -- simple
+ * air drops p    -- additive
+
+* Brute force -- enumerate all
+* cow are fixed -> target[100] -> how many degree is required to drop
+* possibilities of turning on M=10 -> 2^M -> <= 1024 
+* --> Algorithm: try every possible configuration, cummulate the min cost
+```
+// enumerate all 2^M configurations, 2^0: 1<<0;   2^1: 1<<1; ... 2^M === 1<<M
+min_cost=VERYHIGH
+for n=0:(1<<M)
+    // test this configuration
+    for i=0:M
+        if (n>>i) & 1
+           cost += air[i].m
+           for j=air[i].a:air[i].b  // adjust at input time to make [a,b)
+               stall[j]+=air[i].p
+    // check whether target[i]<=stall[i]
+    if ok
+        if min_cost > cost
+           min_cost = cost             
+```
