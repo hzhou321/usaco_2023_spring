@@ -98,3 +98,58 @@ for i=1:N
     else
        cost+=K+1
 ```
+
+# prob1 - silver
+```
+input: A, B, C  and Tc Tm
+for every order:
+     A*Tc+B*Tm need be < C
+output: M=a+b
+for every order:
+    Aa + Bb > A*Tc+B*Tm - C
+    
+ for every possible a    // ~ 10^9
+     for every possible b    // ~ 10^9
+         test every order       // ~100
+         if yes -> update minimum M=a+b
+```
+* binary search
+    * for problems that search minimum/maximum over a big linear range, turns O(N) -> O(lgN) ~ O(1)
+    * if binary search M, find 1st M that works
+```
+if check(0)
+    ans=0
+else
+    M1 = 0
+    M2 = Tc+Tm-2
+    while M1<=M2
+        M3 = (M1+M2)/2
+        if check(M3)
+            M2 = M3-1
+        else
+            M1 = M3+1
+   // M2, M1 
+   ans = M1
+```
+```
+bool check(M) {
+    for a=0:M (or Tc-1)
+        b = M-a
+           for each order
+               if fail return fase
+   rerturn true            
+}
+```
+```
+foreach order
+   Aa+B(M-a) > (ATc+BTm-C)
+   (A-B)a > (ATc+BTm-C)-BM
+   if A>B
+        a > (...)/(A-B)  -> gets a_min, b_max --> fails if a_min>a_max or b_min>b_max
+   if B>A
+        b > (...)/(B-A)  -> gets b_min, a_max 
+   if A==B
+        Aa+Ab > ...
+        AM>...
+```
+    
