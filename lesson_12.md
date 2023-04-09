@@ -152,4 +152,34 @@ foreach order
         Aa+Ab > ...
         AM>...
 ```
-    
+# prob2 - silver
+* p0 -> p1 -> p2 -> ... -> p(n-1)
+*          q
+
+* -> only need maximum of 2 comparisons
+
+# prob3 - silver
+* backtracking
+* nodes -- airport 
+* edges -- flights
+* start at airport 0
+* output: arrive_time[N]
+```
+arrive[0]=0
+stack.push(0)
+while stack.size()>0
+    i = stack.back()
+    stack.pop_back()
+    foreach j in edges[i]  // j is a flight (edge) // optimization, iterate from back
+        if can_fly // arrive[i]+layover < r
+            // means you can arrive at d by s
+            if arrive[d]==-1 || arrive[d] > s
+               arrive[d] = s
+            // optimization -> remove this flight   --> edges[i].pop_back
+for i=0:N
+    print arrive[d]
+```
+* it will timeout because the same airport gets puhed on to the stack again again
+* Insight: we only need check the flight we haven't taken
+*       -> need remove the flights that been taken
+*       -> maximally, we will only visit M flights -> O(M+N)
