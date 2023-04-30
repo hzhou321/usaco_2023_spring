@@ -32,3 +32,9 @@ int Fib(int N) {
    return ans;   
 }
 ```
+
+### Coin problem
+* Sol(N) = MIN (Sol(N-C[i])+1, ...)
+
+### Leetcode problems
+* 322, 518, 62, 300, 5, 32, 53, 64, 416, 790
